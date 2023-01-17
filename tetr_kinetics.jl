@@ -31,7 +31,7 @@ global time = [0.0]
 delta_t = 0.001
 p11 = exp(-Ak_on*delta_t)
 p22 = exp(-Ak_off*delta_t)
-state_time = 0.01:0.001:300
+state_time = 0.001:0.001:300
 
 function affect!(integrator)
     if state[end]==0
@@ -57,7 +57,11 @@ u0 = [0.0,0.0]
 p = [km1,m,kt,g]
 prob = ODEProblem(bursting!,u0,(0.0,300.0),p)
 
-time sol = solve(prob,Tsit5(),callback = cb)
+sol = solve(prob,Tsit5(),callback = cb)
 
-plot(sol,xlims=(0,100))
-plot!(0:0.001:300, state)
+plot(sol,xlim=(20,30))
+plot!(time, state*4000)
+
+gfp = sol[1,:]
+
+histogram(gfp[50000:end])
