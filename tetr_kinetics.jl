@@ -65,3 +65,4 @@ plot!(time, state*4000)
 gfp = sol[1,:]
 
 histogram(gfp[50000:end])
+
