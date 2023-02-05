@@ -50,9 +50,10 @@ prob = ODEProblem(burst,u0,(0.0,300.0),p)
 
 sol = solve(prob,Tsit5())
 
-plot(sol,xlim=(0,20))
-plot!(time, state*4000)
-
+plot(sol,xlim=(0,200))
+savefig("tetr_kin_sym.png")
+plot(time, state,xlim=(0,5),label="state")
+savefig("tetr_kin_sym_state.png")
 gfp = sol[1,:]
 
 histogram(gfp[50000:end])
