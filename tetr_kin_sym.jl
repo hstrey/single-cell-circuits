@@ -54,6 +54,6 @@ plot(sol,xlim=(0,200))
 savefig("tetr_kin_sym.png")
 plot(time, state,xlim=(0,5),label="state")
 savefig("tetr_kin_sym_state.png")
-gfp = sol[1,:]
+gfp = sol[2,:]
 
 histogram(gfp[50000:end])
