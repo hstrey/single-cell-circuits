@@ -23,5 +23,9 @@ plot(sol,idxs=3, xlimit=(0.0,1.0))
 plot(sol,idxs=4)
 plot(sol,idxs=5)
 
-gfp = sol[5,:]
+t_inter = 0:0.001:300
+gfp_int = linear_interpolation(sol.t, sol[5,:])
+gfp = gfp_int.(t_inter)
+
 histogram(gfp[50000:end])
+plot(t_inter,gfp,xlim=(100,110))
