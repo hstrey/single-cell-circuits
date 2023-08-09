@@ -29,3 +29,4 @@ gfp = gfp_int.(t_inter)
 
 histogram(gfp[50000:end])
 plot(t_inter,gfp,xlim=(100,110))
+
