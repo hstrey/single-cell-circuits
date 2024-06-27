@@ -12,7 +12,7 @@ rxs = [(@reaction kOn, A + DNA --> A_DNA),
        (@reaction deg_R, RNA --> 0),
        (@reaction deg_G, GFP --> 0)]
 
-discrete_events = (t == 100.0) => [k ~ 500]
+discrete_events = [[t == 100.0] => [k ~ 500]]
 
 tspan = (0.0, 300.0)
 u0 = [A => 1, DNA => 1, A_DNA => 0, RNA => 0, GFP => 0]

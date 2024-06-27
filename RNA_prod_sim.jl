@@ -22,7 +22,8 @@ plot(sol,idxs=1, xlimit=(0.0,1.0))
 plot(sol,idxs=2, xlimit=(0.0,1.0))
 plot(sol,idxs=3, xlimit=(0.0,1.0))
 plot(sol,idxs=4)
-plot(sol,idxs=5)
+gfp_plot = plot(sol,idxs=5)
+savefig(gfp_plot,"gfp_catalyst.png")
 
 t_inter = 0:0.001:300
 gfp_int = linear_interpolation(sol.t, sol[5,:])
